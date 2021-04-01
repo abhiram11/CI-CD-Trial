@@ -3,11 +3,8 @@
 
 name: Python application
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push]
+
 
 jobs:
   build:
@@ -19,7 +16,7 @@ jobs:
     - run: |
         git fetch --prune --unshallow
     - name: Set up Python 3.8
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v1
       with:
         python-version: 3.8
     - name: Install dependencies
